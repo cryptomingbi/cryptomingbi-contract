@@ -1,7 +1,7 @@
 pragma solidity ^0.4.17;
 
-import "./interfaces/ERC721Draft.sol";
 import "./interfaces/MingbiBase.sol";
+import "./interfaces/ERC721Draft.sol";
 
 contract MingbiOwnership is ERC721, MingbiBase {
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.

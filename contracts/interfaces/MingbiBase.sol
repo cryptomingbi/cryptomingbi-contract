@@ -11,8 +11,6 @@ contract MingbiBase {
 
   // An array containing all existing mingbi
   Mingbi[] mingbies;
-  // An array containing all burnt mingbies
-  Mingbi[] burntMingbies;
 
   function _transfer(address _from, address _to, uint256 _tokenId) internal {
     Transfer(_from, _to, _tokenId);
