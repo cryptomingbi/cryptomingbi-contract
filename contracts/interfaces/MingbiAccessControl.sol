@@ -1,8 +1,6 @@
 pragma solidity ^0.4.18;
 
-/// @title A facet of Mingbi that manages special access privileges.
-/// @author Axiom Zen (https://www.axiomzen.co)
-/// @dev See the MingbiCore contract documentation to understand how the various contract facets are arranged.
+/// This file should be rewritten due to legal reason.
 contract MingbiAccessControl {
     // This facet controls access control for CryptoMingbi. There are four roles managed here:
     //

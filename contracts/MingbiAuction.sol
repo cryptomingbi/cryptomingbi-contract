@@ -1,4 +1,7 @@
 pragma solidity ^0.4.17;
 
-contract MingbiAuction {
+import "./MingbiBreeding.sol";
+
+contract MingbiAuction is MingbiBreeding {
+
 }

@@ -1,6 +1,8 @@
 pragma solidity ^0.4.17;
 
-contract MingbiBase {
+import "./MingbiAccessControl.sol";
+
+contract MingbiBase is MingbiAccessControl {
 
   event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
   struct Mingbi {
