@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "./interfaces/MingbiBase.sol";
-import "./interfaces/ERC721Draft.sol";
-import "./utils/SafeMath.sol";
+import "./MingbiBase.sol";
+import "./ERC721Draft.sol";
+import "./SafeMath.sol";
 
 contract MingbiOwnership is ERC721, MingbiBase {
     using SafeMath for uint256;

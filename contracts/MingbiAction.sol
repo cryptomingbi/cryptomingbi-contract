@@ -14,6 +14,8 @@ contract MingbiAction is MingbiOwnership {
 
     function burn(uint _coinId, string data) external onlyOwnerOf(_coinId){
         Mingbi storage mingbi = mingbies[_coinId];
+        // Can't double burnt a mingbi
+        if (mingbi.burner == 0x0) revert();
         burnt += 1;
         currentPrice = currentPrice.sub(factor);
         mingbi.data = data;
