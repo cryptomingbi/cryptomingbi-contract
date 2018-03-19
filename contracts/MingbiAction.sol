@@ -7,19 +7,18 @@ contract MingbiAction is MingbiOwnership {
     uint factor;
 
     function breed() payable external {
-        if (msg.value >= currentPrice) {
-            currentPrice = currentPrice + factor;
-            _createMingbi(msg.sender);
-        } else {
-            revert();
-        }
+        if (msg.value < currentPrice) revert();
+        currentPrice = currentPrice.add(factor);
+        _createMingbi(msg.sender);
     }
 
     function burn(uint _coinId, string data) external onlyOwnerOf(_coinId){
         Mingbi storage mingbi = mingbies[_coinId];
-        currentPrice = currentPrice - factor;
+        burnt += 1;
+        currentPrice = currentPrice.sub(factor);
         mingbi.data = data;
         mingbi.burner = msg.sender;
+        _transfer(msg.sender, 0x0, _coinId);
     }
 
     function changeFactor(uint f) external onlyOwner {
