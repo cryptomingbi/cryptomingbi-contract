@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.18;
 
 import "./interfaces/MingbiBase.sol";
 import "./interfaces/ERC721Draft.sol";
