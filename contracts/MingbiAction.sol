@@ -8,7 +8,7 @@ contract MingbiAction is MingbiOwnership {
 
     function breed() payable external {
         if (msg.value < currentPrice) revert();
-        currentPrice = msg.value.add(factor);
+        currentPrice = currentPrice.add(factor);
         _createMingbi(msg.sender);
     }
 
