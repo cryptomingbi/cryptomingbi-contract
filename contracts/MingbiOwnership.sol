@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
 import "./MingbiBase.sol";
 import "./ERC721Draft.sol";
@@ -42,8 +42,8 @@ contract MingbiOwnership is ERC721, MingbiBase {
         _transfer(_from, _to, _tokenId);
     }
 
-    modifier onlyOwnerOf(uint _tokenId) {
-        require(msg.sender == mingbiToOwner[_tokenId]);
+    modifier onlyOwnerOf(uint256 _tokenId) {
+        require(mingbiToOwner[_tokenId] == msg.sender);
         _;
     }
 }

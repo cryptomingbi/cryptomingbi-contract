@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
 import "./MingbiOwnership.sol";
 
@@ -8,7 +8,7 @@ contract MingbiAction is MingbiOwnership {
 
     function breed() payable external {
         if (msg.value < currentPrice) revert();
-        currentPrice = currentPrice.add(factor);
+        currentPrice = msg.value.add(factor);
         _createMingbi(msg.sender);
     }
 

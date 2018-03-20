@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
 import "./MingbiAccessControl.sol";
 import "./SafeMath.sol";
@@ -36,7 +36,7 @@ contract MingbiBase is MingbiAccessControl {
             burner: address(0)
         });
 
-        uint256 newMingbiId = mingbies.push(_mingbi);
+        uint256 newMingbiId = (mingbies.push(_mingbi)).sub(1);
         _transfer(0, _owner, newMingbiId);
         ownerMingbiCount[msg.sender]++;
         return newMingbiId;
