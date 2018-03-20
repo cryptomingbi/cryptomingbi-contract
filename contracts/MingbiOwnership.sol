@@ -2,16 +2,11 @@ pragma solidity ^0.4.18;
 
 import "./MingbiBase.sol";
 import "./ERC721Draft.sol";
-import "./SafeMath.sol";
 
 contract MingbiOwnership is ERC721, MingbiBase {
-    using SafeMath for uint256;
-
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
     string public name = "CryptoMingbi";
     string public symbol = "CM";
-
-    mapping (uint => address) mingbiApprovals;
 
     function implementsERC721() public pure returns (bool) {
         return true;
@@ -27,13 +22,6 @@ contract MingbiOwnership is ERC721, MingbiBase {
 
     function ownerOf(uint256 _tokenId) public view returns (address _owner) {
         return mingbiToOwner[_tokenId];
-    }
-
-    function _transfer(address _from, address _to, uint256 _tokenId) internal {
-        ownerMingbiCount[_to] = ownerMingbiCount[_to].add(1);
-        ownerMingbiCount[msg.sender] = ownerMingbiCount[msg.sender].sub(1);
-        mingbiToOwner[_tokenId] = _to;
-        emit Transfer(_from, _to, _tokenId);
     }
 
     function transfer(address _to, uint256 _tokenId) public onlyOwnerOf(_tokenId) {
