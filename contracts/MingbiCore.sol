@@ -5,7 +5,7 @@ import "./MingbiAction.sol";
 contract MingbiCore is MingbiAction {
     function MingbiCore() public {
         ownerAddress = msg.sender;
-        currentPrice = 0.001 ether;
-        factor = 0.1 ether;
+        currentPrice = 0.01 ether;
+        factor = 0.02 ether;
     }
 }
