@@ -38,7 +38,6 @@ contract MingbiBase is MingbiAccessControl {
 
         uint256 newMingbiId = (mingbies.push(_mingbi)).sub(1);
         _transfer(0, _owner, newMingbiId);
-        ownerMingbiCount[msg.sender]++;
         return newMingbiId;
     }
 
